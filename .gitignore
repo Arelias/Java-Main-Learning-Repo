@@ -13,6 +13,8 @@ HELP.md
 .sts4-cache
 
 ### IntelliJ IDEA ###
+**/out/
+**/build/
 .idea
 *.iws
 *.iml
