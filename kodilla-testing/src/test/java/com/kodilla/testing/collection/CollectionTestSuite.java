@@ -2,7 +2,6 @@ package com.kodilla.testing.collection;
 
 import org.junit.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CollectionTestSuite {
@@ -42,6 +41,8 @@ public class CollectionTestSuite {
         //When
         System.out.println("Testing ArrayList with numbers");
         ArrayList<Integer> dummyData = new ArrayList<>();
+        dummyData.add(-2);
+        dummyData.add(-1);
         dummyData.add(0);
         dummyData.add(1);
         dummyData.add(2);
@@ -51,12 +52,14 @@ public class CollectionTestSuite {
         dummyData.add(6);
 
         ArrayList<Integer> result = exterminator.exterminate(dummyData);
-
-        dummyData.remove(5);
-        dummyData.remove(3);
-        dummyData.remove(1);
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        evenNumbers.add(-2);
+        evenNumbers.add(0);
+        evenNumbers.add(2);
+        evenNumbers.add(4);
+        evenNumbers.add(6);
 
         //Then
-        Assert.assertEquals(dummyData, result);
+        Assert.assertEquals(evenNumbers, result);
     }
 }
