@@ -5,6 +5,11 @@ import java.util.List;
 
 public class StatisticsCalculator {
 
+
+
+    Statistics statistics;
+    private double postPerUser, commentPerUser, commentPerPost;
+    private int usersQuantity, postsQuantity, commentsQuantity;
     public double getPostPerUser() {
         return postPerUser;
     }
@@ -27,13 +32,6 @@ public class StatisticsCalculator {
 
     public int getCommentsQuantity() {
         return commentsQuantity;
-    }
-
-    Statistics statistics;
-    private double postPerUser, commentPerUser, commentPerPost;
-    private int usersQuantity, postsQuantity, commentsQuantity;
-    public StatisticsCalculator(Statistics statistics){
-        this.statistics = statistics;
     }
 
     public int usersCount(){

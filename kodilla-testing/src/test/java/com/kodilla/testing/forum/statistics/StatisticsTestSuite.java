@@ -15,7 +15,7 @@ public class StatisticsTestSuite {
     public void testPostQuantityZero() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         usersList.add("1");
         usersList.add("2");
@@ -39,7 +39,7 @@ public class StatisticsTestSuite {
     public void testPostQuantityThousand() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         usersList.add("1");
         usersList.add("2");
@@ -63,7 +63,7 @@ public class StatisticsTestSuite {
     public void testCommentsQuantityZero() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         usersList.add("1");
         usersList.add("2");
@@ -88,7 +88,7 @@ public class StatisticsTestSuite {
     public void testCommentsLessThanPosts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         usersList.add("1");
         usersList.add("2");
@@ -112,7 +112,7 @@ public class StatisticsTestSuite {
     public void testCommentsMoreThanPosts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         usersList.add("1");
         usersList.add("2");
@@ -136,7 +136,7 @@ public class StatisticsTestSuite {
     public void testUserQuantityZero() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         int postCount = 10, commentsCount = 10;
         when(statisticsMock.postsCount()).thenReturn(postCount);
@@ -156,7 +156,7 @@ public class StatisticsTestSuite {
     public void testUserQuantityHundred() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statCalculator = new StatisticsCalculator();
         ArrayList<String> usersList = new ArrayList<>();
         for(int i = 0; i < 100; i++){
             usersList.add(Integer.toString(i));
