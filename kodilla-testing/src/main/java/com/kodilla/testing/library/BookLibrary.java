@@ -10,7 +10,8 @@ public class BookLibrary {
     public BookLibrary(LibraryDatabase libraryDatabase) {
         this.libraryDatabase = libraryDatabase;
     }
-//    //If returned list is > 20 elements, return null
+
+    //    //If returned list is > 20 elements, return null
 //    //If title fragments is shorter > 3 chars, return null
 //    //Else return the book list
     public List<Book> listBooksWithCondition(String titleFragment) {
@@ -26,14 +27,10 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-        List<Book> bookList = new ArrayList<Book>();
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> bookList = libraryDatabase.listBooksInHandsOf(libraryUser);
 
-        if(!libraryUser.equals(null)) {
-            bookList = libraryDatabase
-                    .listBooksInHandsOf(libraryUser);
-        }
-            return bookList;
+        return bookList;
     }
 }
 
