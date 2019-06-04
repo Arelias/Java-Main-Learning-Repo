@@ -9,4 +9,7 @@ public final class Continent {
     public List<Country> getCountryList() {
         return countryList;
     }
+    public void addCountry(Country country){
+        this.countryList.add(country);
+    }
 }
