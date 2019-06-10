@@ -9,6 +9,7 @@ public final class ForumUser {
     private final String username;
     private final char gender;
     private final LocalDate dateOfBirth;
+    private static ForumUser instance;
 
     public ForumUser(int id, int postsQuantity, String username, char gender, LocalDate dateOfBirth) {
         this.id = id;
@@ -17,6 +18,15 @@ public final class ForumUser {
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
     }
+
+    //Wzorce projektowe
+//    public static ForumUser getInstance(int id, int postsQuantity, String username, char gender, LocalDate dateOfBirth){
+//
+//        if(instance == null){
+//            instance = new ForumUser( id, postsQuantity, username, gender, dateOfBirth);
+//        }
+//        return instance;
+//    }git
 
     public int getId() {
         return id;
