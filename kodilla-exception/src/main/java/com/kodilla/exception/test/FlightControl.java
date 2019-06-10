@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FlightControl {
 
-    public void findFilght(Flight flight) throws RouteNotFoundException, NullPointerException{
+    public void findFilght(Flight flight) throws RouteNotFoundException{
 
         Map<String, Boolean> routes = new HashMap<>();
         routes.put("Szymany", true);
