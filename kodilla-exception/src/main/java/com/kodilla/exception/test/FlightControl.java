@@ -10,11 +10,15 @@ public class FlightControl {
         Map<String, Boolean> routes = new HashMap<>();
         routes.put("Szymany", true);
         routes.put("Stansted", false);
+        routes.put("Manchester", true);
         if(!routes.containsKey(flight.arrivalAirport) || !routes.containsKey(flight.departureAirport)){
             throw new RouteNotFoundException("Route missing");
         }
         if(!routes.get(flight.arrivalAirport) || !routes.get(flight.departureAirport)){
             System.out.println("Route suspended");
+        }
+        else{
+            System.out.println("Flight available");
         }
     }
 }

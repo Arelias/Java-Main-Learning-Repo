@@ -7,8 +7,10 @@ public class ExceptionHandling {
 
         Flight flight1 = new Flight("Szymany", "Stansted");
         Flight flight2 = new Flight("Szymany", "Gdansk");
+        Flight flight3 = new Flight("Szymany", "Manchester");
         FlightControl controller = new FlightControl();
         try{
+            controller.findFilght(flight3);
             controller.findFilght(flight1);
             controller.findFilght(flight2);
         }
