@@ -2,14 +2,14 @@ package com.kodilla.good.patterns.challenges;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MovieProcessor {
 
     public void execute(Map<String, List<String>> items){
-        items.entrySet().stream()
+        String temp = items.entrySet().stream()
                 .flatMap(movie -> movie.getValue().stream())
-                .map(movie -> movie + " ! ")
-                .forEach(System.out::print);
-        System.out.println();
+                .collect(Collectors.joining(" ! "));
+        System.out.println(temp);
     }
 }
