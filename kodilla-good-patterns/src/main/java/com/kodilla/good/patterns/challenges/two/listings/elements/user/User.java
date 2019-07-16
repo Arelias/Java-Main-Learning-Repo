@@ -1,8 +1,7 @@
-package com.kodilla.good.patterns.challenges.two.user;
+package com.kodilla.good.patterns.challenges.two.listings.elements.user;
 
-import com.kodilla.good.patterns.challenges.two.listings.elements.Item;
 import com.kodilla.good.patterns.challenges.two.listings.Listing;
-import com.kodilla.good.patterns.challenges.two.user.elements.ShoppingCart;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.elements.ShoppingCart;
 
 import java.util.List;
 
@@ -12,7 +11,6 @@ public class User {
     private String password;
     private String email;
     private ShoppingCart shoppingCart;
-    private List<Listing> salesList;
 
     public User(String username, String password) {
         this.username = username;
@@ -20,12 +18,11 @@ public class User {
         this.shoppingCart = new ShoppingCart();
     }
 
-    public User(String username, String password, String email, ShoppingCart shoppingCart, List<Listing> salesList) {
+    public User(String username, String password, String email, ShoppingCart shoppingCart) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.shoppingCart = shoppingCart;
-        this.salesList = salesList;
     }
 
     public String getUsername() {
@@ -58,14 +55,6 @@ public class User {
 
     public void setShoppingCart(ShoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;
-    }
-
-    public List<Listing> getSalesList() {
-        return salesList;
-    }
-
-    public void setSalesList(List<Listing> salesList) {
-        this.salesList = salesList;
     }
 
     @Override

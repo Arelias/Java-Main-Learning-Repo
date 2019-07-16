@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges.two.listings;
 import com.kodilla.good.patterns.challenges.two.listings.elements.Item;
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
 
 import java.time.LocalDateTime;
 
@@ -10,9 +10,9 @@ public class BiddingListing extends Listing {
     private User highestBidder;
 
 
-    public BiddingListing(User seller, Item item, LocalDateTime startDate, LocalDateTime endDate) {
+    public BiddingListing (User seller, Item item, int quantity, LocalDateTime startDate, LocalDateTime endDate) {
 
-        super(seller, item, 1, startDate, endDate);
+        super(seller, item, quantity, startDate, endDate);
         this.highestBid = 0;
         this.highestBidder = null;
     }

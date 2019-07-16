@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges.two;
 
 import com.kodilla.good.patterns.challenges.two.listings.Listing;
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
 
 public class OrderDto {
 

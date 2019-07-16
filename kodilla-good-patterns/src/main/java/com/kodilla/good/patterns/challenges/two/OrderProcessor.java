@@ -6,7 +6,7 @@ import com.kodilla.good.patterns.challenges.two.Services.information.Information
 import com.kodilla.good.patterns.challenges.two.Services.payment.PaymentService;
 import com.kodilla.good.patterns.challenges.two.listings.Listing;
 import com.kodilla.good.patterns.challenges.two.repositories.order.OrderRepository;
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
 
 import java.time.LocalDate;
 
@@ -36,10 +36,6 @@ public class OrderProcessor {
     public OrderDto process(final User buyer,
                             final Listing listing,
                             final LocalDate purchaseDate){
-
-        //Kupienie itemu to:
-        //Wybranie aukcji, to mamy w parametrze, mamy tez usera
-        //
 
         boolean isOrdered = orderService.order(buyer, listing, paymentService, transportService);
         if(isOrdered) {

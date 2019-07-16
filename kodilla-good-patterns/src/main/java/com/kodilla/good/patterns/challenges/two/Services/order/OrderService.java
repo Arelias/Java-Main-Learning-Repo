@@ -2,8 +2,11 @@ package com.kodilla.good.patterns.challenges.two.Services.order;
 
 import com.kodilla.good.patterns.challenges.two.Services.Transport.TransportService;
 import com.kodilla.good.patterns.challenges.two.Services.payment.PaymentService;
+import com.kodilla.good.patterns.challenges.two.listings.BiddingListing;
 import com.kodilla.good.patterns.challenges.two.listings.Listing;
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
+
+import java.time.LocalDateTime;
 
 public class OrderService {
 
@@ -13,10 +16,14 @@ public class OrderService {
                          final PaymentService paymentService,
                          final TransportService transportService){
 
-        boolean orderValid = false;
+        boolean orderValid = paymentService.pay() && transportService.request();
 
-        if(paymentService.pay() && transportService.request()){
-            orderValid = true;
+        if(listing instanceof BiddingListing)
+        {
+            orderValid = orderValid && (LocalDateTime.now().isAfter(listing.getEndDate()));
+        }
+
+        if(orderValid){
             System.out.println("Order successful.");
         }
         return orderValid;

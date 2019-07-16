@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges.two.listings;
 
 import com.kodilla.good.patterns.challenges.two.listings.elements.Item;
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
 
 import java.time.LocalDateTime;
 

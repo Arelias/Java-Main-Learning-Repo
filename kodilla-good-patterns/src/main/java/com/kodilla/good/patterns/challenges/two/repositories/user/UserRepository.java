@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges.two.repositories.user;
 
-import com.kodilla.good.patterns.challenges.two.user.User;
+import com.kodilla.good.patterns.challenges.two.listings.elements.user.User;
 import java.util.Optional;
 
 

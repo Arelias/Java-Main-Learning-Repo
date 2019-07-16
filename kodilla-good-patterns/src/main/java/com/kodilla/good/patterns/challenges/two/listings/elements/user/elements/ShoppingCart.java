@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.two.user.elements;
+package com.kodilla.good.patterns.challenges.two.listings.elements.user.elements;
 
 import com.kodilla.good.patterns.challenges.two.listings.Listing;
 

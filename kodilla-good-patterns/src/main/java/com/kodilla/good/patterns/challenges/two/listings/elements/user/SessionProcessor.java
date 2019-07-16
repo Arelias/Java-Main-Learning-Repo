@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.two.user;
+package com.kodilla.good.patterns.challenges.two.listings.elements.user;
 
 import com.kodilla.good.patterns.challenges.two.repositories.user.UserRepository;
 
