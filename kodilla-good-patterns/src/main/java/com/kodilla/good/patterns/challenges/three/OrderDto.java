@@ -22,28 +22,8 @@ public class OrderDto {
         this.orderConfirmed = orderConfirmed;
     }
 
-    public String getFailReason() {
-        return failReason;
-    }
-
     public void setFailReason(String failReason) {
         this.failReason = failReason;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public LocalDate getArrivalDate() {
-        return arrivalDate;
-    }
-
-    public void setArrivalDate(LocalDate arrivalDate) {
-        this.arrivalDate = arrivalDate;
     }
 
     @Override
@@ -59,7 +39,7 @@ public class OrderDto {
             output += ", arrivalDate='" + arrivalDate + '\'' +
                     '}';
         }
-        
+
         return output;
     }
 }

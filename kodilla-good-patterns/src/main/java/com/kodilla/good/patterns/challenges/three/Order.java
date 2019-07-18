@@ -19,10 +19,6 @@ public class Order {
         this.designatedDeliveryDate = designatedDeliveryDate;
     }
 
-    public int getId() {
-        return Id;
-    }
-
     public User getUser() {
         return user;
     }
@@ -35,25 +31,16 @@ public class Order {
         return shoppingCart;
     }
 
-    public void setShoppingCart(Map<Product, Integer> shoppingCart) {
-        this.shoppingCart = shoppingCart;
-    }
 
     public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(LocalDate purchaseDate) {
-        this.purchaseDate = purchaseDate;
-    }
 
     public LocalDate getDesignatedDeliveryDate() {
         return designatedDeliveryDate;
     }
 
-    public void setDesignatedDeliveryDate(LocalDate designatedDeliveryDate) {
-        this.designatedDeliveryDate = designatedDeliveryDate;
-    }
 
     @Override
     public boolean equals(Object o) {
