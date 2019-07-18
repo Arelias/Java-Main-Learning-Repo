@@ -1,12 +1,12 @@
-package com.kodilla.good.patterns.challenges.two.listings.elements;
+package com.kodilla.good.patterns.challenges.three;
 
-public class Item {
+public class Product {
 
     private double value;
     private String name;
     private String description;
 
-    public Item(double value, String name, String description) {
+    public Product(double value, String name, String description) {
 
         this.value = value;
         this.name = name;
@@ -53,4 +53,6 @@ public class Item {
                 ", description='" + description + '\'' +
                 '}';
     }
+
 }
+
