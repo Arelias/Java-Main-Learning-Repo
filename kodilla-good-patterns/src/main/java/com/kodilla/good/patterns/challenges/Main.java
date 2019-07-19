@@ -1,31 +1,43 @@
 package com.kodilla.good.patterns.challenges;
 
-import com.kodilla.good.patterns.challenges.three.manufacturer.ExtraFoodShop;
-import com.kodilla.good.patterns.challenges.three.manufacturer.GlutenFreeShop;
-import com.kodilla.good.patterns.challenges.three.manufacturer.HealthyShop;
-import com.kodilla.good.patterns.challenges.three.Product;
-import com.kodilla.good.patterns.challenges.three.User;
-
-import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
+import com.kodilla.good.patterns.challenges.four.FlightRepository;
+import com.kodilla.good.patterns.challenges.four.FlightSearcher;
+import com.kodilla.good.patterns.challenges.four.LocalFlightsRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        User user = new User("Stachu", "Europe");
-        Map<Product, Integer> dummyCart = new HashMap<>();
-        Product salad = new Product(15, "Salatka", "Zdrowa salatka");
-        Product potato = new Product(1, "Ziemniak", "Non GMO ziemniak");
-        dummyCart.put(salad, 3);
-        dummyCart.put(potato, 2);
-        user.order(new HealthyShop("America"),dummyCart, LocalDate.now());
-        user.order(new HealthyShop("America"),dummyCart, LocalDate.now().plusDays(5));
-        user.order(new GlutenFreeShop("America"),dummyCart, LocalDate.now());
-        dummyCart.put(salad, 10);
-        user.order(new GlutenFreeShop("America"),dummyCart, LocalDate.now().plusDays(5));
-        user.order(new ExtraFoodShop("America"),dummyCart, LocalDate.now());
-        user.order(new ExtraFoodShop("Europe"),dummyCart, LocalDate.now().plusDays(5));
+
+        FlightRepository flightRepo = new LocalFlightsRepository();
+        FlightSearcher flightSearcher = new FlightSearcher();
+        List<String> firstCourse = new ArrayList<>();
+        firstCourse.add("Olsztyn");
+        firstCourse.add("Wroclaw");
+        firstCourse.add("Krakow");
+        flightRepo.addFlight(firstCourse);
+        List<String> secondCourse = new ArrayList<>();
+        secondCourse.add("Krakow");
+        secondCourse.add("Warszawa");
+        secondCourse.add("Wroclaw");
+        flightRepo.addFlight(secondCourse);
+
+
+        System.out.println("Flights arriving in: ");
+        System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Krakow"));
+        System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Olsztyn"));
+        System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Wroclaw"));
+        System.out.println("Flights departing to: ");
+        System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Krakow"));
+        System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Olsztyn"));
+        System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Wroclaw"));
+        System.out.println("Flight between cities A and B: ");
+        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Olsztyn", "Olsztyn"));
+        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Wroclaw", "Krakow"));
+        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Olsztyn", "Krakow"));
+        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Krakow", "Krakow"));
+        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Krakow", "Wroclaw"));
 
     }
 }
@@ -58,3 +70,18 @@ public class Main {
 //        OrderProcessor orderProcessor = new OrderProcessor(new MailService(), new OrderService(), new OrderRepositorySQL(), new CardService(), new CourierService());
 //        OrderDto orderDto = orderProcessor.process(orderRequest.getBuyer(),orderRequest.getListing(), orderRequest.getPurchaseDate());
 //        System.out.println(orderDto);
+
+//Trzecie zadanie
+//        User user = new User("Stachu", "Europe");
+//        Map<Product, Integer> dummyCart = new HashMap<>();
+//        Product salad = new Product(15, "Salatka", "Zdrowa salatka");
+//        Product potato = new Product(1, "Ziemniak", "Non GMO ziemniak");
+//        dummyCart.put(salad, 3);
+//        dummyCart.put(potato, 2);
+//        user.order(new HealthyShop("America"),dummyCart, LocalDate.now());
+//        user.order(new HealthyShop("America"),dummyCart, LocalDate.now().plusDays(5));
+//        user.order(new GlutenFreeShop("America"),dummyCart, LocalDate.now());
+//        dummyCart.put(salad, 10);
+//        user.order(new GlutenFreeShop("America"),dummyCart, LocalDate.now().plusDays(5));
+//        user.order(new ExtraFoodShop("America"),dummyCart, LocalDate.now());
+//        user.order(new ExtraFoodShop("Europe"),dummyCart, LocalDate.now().plusDays(5));
