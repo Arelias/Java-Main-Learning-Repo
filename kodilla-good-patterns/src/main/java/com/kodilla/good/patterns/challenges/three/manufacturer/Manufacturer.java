@@ -5,10 +5,14 @@ import com.kodilla.good.patterns.challenges.three.OrderDto;
 
 public abstract class Manufacturer {
 
-    String localisation;
+    private String localisation;
 
     public Manufacturer(String localisation) {
         this.localisation = localisation;
+    }
+
+    public String getLocalisation() {
+        return localisation;
     }
 
     public abstract OrderDto process(Order order);

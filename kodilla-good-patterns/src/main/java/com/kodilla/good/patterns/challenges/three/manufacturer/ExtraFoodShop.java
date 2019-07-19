@@ -14,7 +14,7 @@ public class ExtraFoodShop extends Manufacturer {
 
         OrderDto output =  new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate(), order.getId());
 
-        if(!order.getUser().getLocalisation().equals(this.localisation)){
+        if(!order.getUser().getLocalisation().equals(this.getLocalisation())){
             output.setFailReason("Your localisation is not yet supported");
         } else {
             output.setOrderConfirmed(true);
