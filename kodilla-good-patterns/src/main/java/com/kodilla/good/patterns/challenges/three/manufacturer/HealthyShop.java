@@ -12,7 +12,7 @@ public class HealthyShop extends Manufacturer {
     @Override
     public OrderDto process(Order order) {
 
-        OrderDto output = new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate());
+        OrderDto output = new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate(), order.getId());
         //jezeli order date i delivery date mniej niz 2 dni roznicy, nie przyjmij, minimum 3 dni na zamowienie
         if(order.getPurchaseDate().plusDays(2).isAfter(order.getDesignatedDeliveryDate())){
             output.setFailReason("Chosen date is too soon, minimum 3 days for delivery");

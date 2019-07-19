@@ -5,11 +5,13 @@ import java.time.LocalDate;
 public class OrderDto {
 
     private boolean orderConfirmed = false;
+    private Integer orderId;
     private String failReason = "";
     private String userName;
     private LocalDate arrivalDate;
 
-    public OrderDto(String userName, LocalDate arrivalDate) {
+    public OrderDto(String userName, LocalDate arrivalDate, Integer orderId) {
+        this.orderId = orderId;
         this.userName = userName;
         this.arrivalDate = arrivalDate;
     }
@@ -30,7 +32,8 @@ public class OrderDto {
     public String toString() {
         String output = "";
         output += "OrderDto{" +
-                "orderConfirmed=" + orderConfirmed +
+                "orderId=" + orderId +
+                ", orderConfirmed=" + orderConfirmed +
                 ", userName='" + userName + '\'';
         if (!orderConfirmed) {
             output += ", failure reason= " + failReason;

@@ -16,7 +16,7 @@ public class GlutenFreeShop extends Manufacturer {
     public OrderDto process(Order order) {
 
         //jezeli zamowienie jest ponizej jakiejs wartosci to tez odmawia
-        OrderDto output = new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate());
+        OrderDto output =  new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate(), order.getId());
         double orderValue = 0;
         for(Map.Entry<Product, Integer> position : order.getShoppingCart().entrySet()){
            orderValue += position.getKey().getValue() * position.getValue();

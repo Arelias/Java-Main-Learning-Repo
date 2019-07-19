@@ -12,7 +12,7 @@ public class ExtraFoodShop extends Manufacturer {
     @Override
     public OrderDto process(Order order) {
 
-        OrderDto output = new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate());
+        OrderDto output =  new OrderDto(order.getUser().getUserName(), order.getDesignatedDeliveryDate(), order.getId());
 
         if(!order.getUser().getLocalisation().equals(this.localisation)){
             output.setFailReason("Your localisation is not yet supported");

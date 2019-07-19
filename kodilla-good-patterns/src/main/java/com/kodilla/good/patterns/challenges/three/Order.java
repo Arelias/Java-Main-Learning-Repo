@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class Order {
 
-    private int Id;
+    private static int Id = 0;
     private User user;
     private Map<Product, Integer> shoppingCart;
     private LocalDate purchaseDate;
     private LocalDate designatedDeliveryDate;
 
     public Order(User user, Map<Product, Integer> shoppingCart, LocalDate designatedDeliveryDate) {
-        Id = 10; //Normalnie pobieralby z db czy cos
+        Id = Id+1; //Normalnie pobieralby z db czy cos
         this.user = user;
         this.shoppingCart = shoppingCart;
         this.purchaseDate = LocalDate.now();
@@ -27,15 +27,17 @@ public class Order {
         this.user = user;
     }
 
+    public static int getId() {
+        return Id;
+    }
+
     public Map<Product, Integer> getShoppingCart() {
         return shoppingCart;
     }
 
-
     public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
-
 
     public LocalDate getDesignatedDeliveryDate() {
         return designatedDeliveryDate;
