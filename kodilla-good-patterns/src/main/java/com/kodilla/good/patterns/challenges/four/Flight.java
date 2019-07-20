@@ -1,23 +1,51 @@
 package com.kodilla.good.patterns.challenges.four;
 
-import java.util.List;
-
 public class Flight {
 
     private static Integer masterId = 0;
     private Integer iD;
-    private List<String> Course;
+    private String originCity;
+    private String destinationCity;
 
-    public Flight(List<String> course) {
+    public Flight(String originCity, String destinationCity) {
 
             this.iD = masterId;
-            this.Course = course;
+            this.originCity = originCity;
+            this.destinationCity = destinationCity;
             masterId++;
 
     }
 
-    public List<String> getCourse() {
-        return Course;
+    public static Integer getMasterId() {
+        return masterId;
+    }
+
+    public static void setMasterId(Integer masterId) {
+        Flight.masterId = masterId;
+    }
+
+    public Integer getiD() {
+        return iD;
+    }
+
+    public void setiD(Integer iD) {
+        this.iD = iD;
+    }
+
+    public String getOriginCity() {
+        return originCity;
+    }
+
+    public void setOriginCity(String originCity) {
+        this.originCity = originCity;
+    }
+
+    public String getDestinationCity() {
+        return destinationCity;
+    }
+
+    public void setDestinationCity(String destinationCity) {
+        this.destinationCity = destinationCity;
     }
 
     @Override
@@ -28,13 +56,15 @@ public class Flight {
         Flight flight = (Flight) o;
 
         if (!iD.equals(flight.iD)) return false;
-        return Course.equals(flight.Course);
+        if (!originCity.equals(flight.originCity)) return false;
+        return destinationCity.equals(flight.destinationCity);
     }
 
     @Override
     public int hashCode() {
         int result = iD.hashCode();
-        result = 31 * result + Course.hashCode();
+        result = 31 * result + originCity.hashCode();
+        result = 31 * result + destinationCity.hashCode();
         return result;
     }
 
@@ -42,9 +72,8 @@ public class Flight {
     public String toString() {
         return "Flight{" +
                 "iD=" + iD +
-                ", Origin=" + Course.get(0) +
-                ", Destination=" + Course.get(Course.size()-1) +
-                ", Course=" + Course +
+                ", originCity='" + originCity + '\'' +
+                ", destinationCity='" + destinationCity + '\'' +
                 '}';
     }
 }

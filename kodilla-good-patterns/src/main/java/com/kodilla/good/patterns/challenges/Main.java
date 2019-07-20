@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
+import com.kodilla.good.patterns.challenges.four.Flight;
 import com.kodilla.good.patterns.challenges.four.FlightRepository;
 import com.kodilla.good.patterns.challenges.four.FlightSearcher;
 import com.kodilla.good.patterns.challenges.four.LocalFlightsRepository;
@@ -12,32 +13,40 @@ public class Main {
 
         FlightRepository flightRepo = new LocalFlightsRepository();
         FlightSearcher flightSearcher = new FlightSearcher();
-        List<String> firstCourse = new ArrayList<>();
-        firstCourse.add("Olsztyn");
-        firstCourse.add("Wroclaw");
-        firstCourse.add("Krakow");
-        flightRepo.addFlight(firstCourse);
-        List<String> secondCourse = new ArrayList<>();
-        secondCourse.add("Krakow");
-        secondCourse.add("Warszawa");
-        secondCourse.add("Wroclaw");
-        flightRepo.addFlight(secondCourse);
+        flightRepo.addFlight(new Flight("Krakow", "Olsztyn"));
+        flightRepo.addFlight(new Flight("Wroclaw", "Olsztyn"));
+        flightRepo.addFlight(new Flight("Warszawa", "Krakow"));
+        flightRepo.addFlight(new Flight("Stansted", "Gdansk"));
+        flightRepo.addFlight(new Flight("Olsztyn", "Krakow"));
+        flightRepo.addFlight(new Flight("Olsztyn", "Krakow"));
+        flightRepo.addFlight(new Flight("Olsztyn", "Wroclaw"));
+        flightRepo.addFlight(new Flight("Wroclaw", "Krakow"));
+        flightRepo.addFlight(new Flight("Gdansk", "Olsztyn"));
+
+
 
 
         System.out.println("Flights arriving in: ");
+        System.out.println("---------------------------------------");
         System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Krakow"));
         System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Olsztyn"));
-        System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Wroclaw"));
+        System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Gdansk"));
+        System.out.println("---------------------------------------");
+
         System.out.println("Flights departing to: ");
+        System.out.println("---------------------------------------");
         System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Krakow"));
         System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Olsztyn"));
         System.out.println(flightSearcher.listDepartureFlights(flightRepo, "Wroclaw"));
+        System.out.println("---------------------------------------");
+
         System.out.println("Flight between cities A and B: ");
-        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Olsztyn", "Olsztyn"));
-        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Wroclaw", "Krakow"));
-        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Olsztyn", "Krakow"));
-        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Krakow", "Krakow"));
-        System.out.println(flightSearcher.listPossibleFlights(flightRepo, "Krakow", "Wroclaw"));
+        System.out.println("---------------------------------------");
+        System.out.println("1" + flightSearcher.listPossibleFlights(flightRepo, "Wroclaw", "Krakow"));
+        System.out.println("2" + flightSearcher.listPossibleFlights(flightRepo, "Olsztyn", "Krakow"));
+        System.out.println("3" + flightSearcher.listPossibleFlights(flightRepo, "Stansted", "Olsztyn"));
+        System.out.println("4" + flightSearcher.listPossibleFlights(flightRepo, "Krakow", "Wroclaw"));
+        System.out.println("---------------------------------------");
 
     }
 }

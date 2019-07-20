@@ -11,19 +11,12 @@ public class LocalFlightsRepository extends FlightRepository{
     }
 
     @Override
-    public boolean addFlight(List<String> flightCourse) {
+    public boolean addFlight(Flight flight) {
         try{
-            if(flightCourse.size() > 3 || flightCourse.size() < 2){
-                throw new SizeLimitExceededException();
-            }
-
-            Flight flight = new Flight(flightCourse);
             flightSet.add(flight);
             return true;
-
-        } catch (Exception e) {
-            System.out.println("Flight course is incorrect");
-            e.printStackTrace();
+        } catch (Exception e){
+            System.out.println(e);
             return false;
         }
     }

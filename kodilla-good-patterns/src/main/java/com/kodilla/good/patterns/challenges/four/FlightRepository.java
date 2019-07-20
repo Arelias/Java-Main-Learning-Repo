@@ -11,6 +11,6 @@ public abstract class FlightRepository {
         return flightSet;
     }
 
-    public abstract boolean addFlight(List<String> flightCourse);
+    public abstract boolean addFlight(Flight flight);
 
 }
