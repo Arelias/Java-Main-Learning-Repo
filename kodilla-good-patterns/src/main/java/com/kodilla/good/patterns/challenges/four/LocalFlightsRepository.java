@@ -1,8 +1,6 @@
 package com.kodilla.good.patterns.challenges.four;
 
-import javax.naming.SizeLimitExceededException;
 import java.util.HashSet;
-import java.util.List;
 
 public class LocalFlightsRepository extends FlightRepository{
 

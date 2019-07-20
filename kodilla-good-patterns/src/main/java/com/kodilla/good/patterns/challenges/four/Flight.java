@@ -16,36 +16,12 @@ public class Flight {
 
     }
 
-    public static Integer getMasterId() {
-        return masterId;
-    }
-
-    public static void setMasterId(Integer masterId) {
-        Flight.masterId = masterId;
-    }
-
-    public Integer getiD() {
-        return iD;
-    }
-
-    public void setiD(Integer iD) {
-        this.iD = iD;
-    }
-
     public String getOriginCity() {
         return originCity;
     }
 
-    public void setOriginCity(String originCity) {
-        this.originCity = originCity;
-    }
-
     public String getDestinationCity() {
         return destinationCity;
-    }
-
-    public void setDestinationCity(String destinationCity) {
-        this.destinationCity = destinationCity;
     }
 
     @Override

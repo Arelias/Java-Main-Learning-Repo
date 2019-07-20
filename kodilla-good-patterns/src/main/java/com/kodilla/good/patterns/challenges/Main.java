@@ -24,8 +24,6 @@ public class Main {
         flightRepo.addFlight(new Flight("Gdansk", "Olsztyn"));
 
 
-
-
         System.out.println("Flights arriving in: ");
         System.out.println("---------------------------------------");
         System.out.println(flightSearcher.listArrivalFlights(flightRepo, "Krakow"));
