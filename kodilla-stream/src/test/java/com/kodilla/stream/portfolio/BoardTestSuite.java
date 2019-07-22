@@ -64,7 +64,7 @@ public class BoardTestSuite {
         taskListInProgress.addTask(task2);
         TaskList taskListDone = new TaskList("Done");
         taskListDone.addTask(task6);
-        //board
+        //portfolio
         Board project = new Board("Project Weather Prediction");
         project.addTaskList(taskListToDo);
         project.addTaskList(taskListInProgress);

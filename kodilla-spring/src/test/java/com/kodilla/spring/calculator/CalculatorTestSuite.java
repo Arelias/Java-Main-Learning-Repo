@@ -15,6 +15,8 @@ public class CalculatorTestSuite {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
+        //Alternative way for invoking the bean
+        //Calculator calculator = (Calculator) context.getBean("calculator");
         Calculator calculator = context.getBean(Calculator.class);
         //When
         Double sum = calculator.add(5,10);
