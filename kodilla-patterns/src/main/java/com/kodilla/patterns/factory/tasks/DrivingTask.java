@@ -5,7 +5,7 @@ public class DrivingTask implements Task {
     private String taskName;
     private String where;
     private String using;
-    boolean isDone;
+    private boolean isDone;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;

@@ -5,7 +5,7 @@ public class PaintingTask implements Task {
     private String taskName;
     private String color;
     private String whatToPaint;
-    boolean isDone;
+    private boolean isDone;
 
 
     public PaintingTask(String taskName, String color, String whatToPaint) {
