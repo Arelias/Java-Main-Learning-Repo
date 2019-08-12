@@ -20,9 +20,9 @@ public class Invoice {
         this.number = number;
     }
 
+    @NotNull
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;
@@ -33,6 +33,7 @@ public class Invoice {
     public String getNumber() {
         return number;
     }
+    @NotNull
     @OneToMany(targetEntity = Item.class, mappedBy = "invoice", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Item> getItems() {
         return items;

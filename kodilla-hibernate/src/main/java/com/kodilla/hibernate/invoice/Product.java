@@ -17,9 +17,9 @@ public class Product {
     public Product(String name) {
         this.name = name;
     }
+    @NotNull
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;

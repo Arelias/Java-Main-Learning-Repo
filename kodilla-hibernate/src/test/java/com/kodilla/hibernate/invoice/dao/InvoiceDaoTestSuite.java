@@ -23,7 +23,6 @@ public class InvoiceDaoTestSuite {
     @Autowired
     ProductDao productDao;
     String number = "1337";
-    String description = "EXAMPLE DESCRIPTION";
 
     @Test
     public void testFindInvoiceByNumber() {
