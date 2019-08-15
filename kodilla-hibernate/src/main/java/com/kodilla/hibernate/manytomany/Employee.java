@@ -5,6 +5,13 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//HQL Query
+@NamedQuery(
+        name = "Employee.retrieveEmployeesWithSurname",
+        query = "FROM Employee WHERE lastname = :LASTNAME"
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

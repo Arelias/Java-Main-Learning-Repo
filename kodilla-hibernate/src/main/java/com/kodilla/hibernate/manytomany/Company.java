@@ -4,7 +4,14 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
+//SQL Query
+@NamedNativeQuery(
+        //Could be changed to just compare two substrings (would be better), but well, exercise didn't specify that
+        name = "Company.retrieveCompaniesWithMatchingNames",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE  SUBSTRING(company_name, 1, 3) = :COMPANYNAME",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
