@@ -11,7 +11,13 @@ import java.util.List;
         name = "Employee.retrieveEmployeesWithSurname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
-
+@NamedNativeQuery(
+        //Could be changed to just compare two substrings (would be better), but well, exercise didn't specify that
+        name = "Employee.retrieveSimilarNames",
+        query = "SELECT * FROM EMPLOYEES" +
+                " WHERE firstname LIKE CONCAT('%',:FIRSTNAME,'%')",
+        resultClass = Employee.class
+)
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
